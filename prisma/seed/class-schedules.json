@@ -1,0 +1,98 @@
+[
+  {
+    "gradeLevel": "PRE-KINDER",
+    "section": "DISNEY",
+    "schedules": [
+      {
+        "time": "0700 - 0800",
+        "day": "Monday",
+        "subject": "English"
+      },
+      {
+        "time": "0700 - 0800",
+        "day": "Wednesday",
+        "subject": "English"
+      },
+      {
+        "time": "0800 - 0900",
+        "day": "Monday",
+        "subject": "Mathematics"
+      },
+      {
+        "time": "0800 - 0900",
+        "day": "Wednesday",
+        "subject": "Mathematics"
+      },
+      {
+        "time": "0800 - 0900",
+        "day": "Tuesday",
+        "subject": "Science"
+      },
+      {
+        "time": "0800 - 0900",
+        "day": "Wednesday",
+        "subject": "Science"
+      },
+      {
+        "time": "1000 - 1100",
+        "day": "Tuesday",
+        "subject": "Filipino"
+      },
+      {
+        "time": "1000 - 1100",
+        "day": "Thursday",
+        "subject": "Filipino"
+      },
+      {
+        "time": "1300 - 1400",
+        "day": "Tuesday",
+        "subject": "Araling Panlipunan"
+      },
+      {
+        "time": "1300 - 1400",
+        "day": "Thursday",
+        "subject": "Araling Panlipunan"
+      },
+      {
+        "time": "1300 - 1400",
+        "day": "Monday",
+        "subject": "MAPEH"
+      },
+      {
+        "time": "1300 - 1400",
+        "day": "Wednesday",
+        "subject": "MAPEH"
+      },
+      {
+        "time": "1400 - 1500",
+        "day": "Tuesday",
+        "subject": "Edukasyon sa Pagpapakatao"
+      },
+      {
+        "time": "1400 - 1500",
+        "day": "Friday",
+        "subject": "Edukasyon sa Pagpapakatao"
+      },
+      {
+        "time": "1600 - 1700",
+        "day": "Tuesday",
+        "subject": "Mother Tongue"
+      },
+      {
+        "time": "1600 - 1700",
+        "day": "Friday",
+        "subject": "Mother Tongue"
+      },
+      {
+        "time": "1600 - 1700",
+        "day": "Monday",
+        "subject": "Computer"
+      },
+      {
+        "time": "1600 - 1700",
+        "day": "Wednesday",
+        "subject": "Computer"
+      }
+    ]
+  }
+]

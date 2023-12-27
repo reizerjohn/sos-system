@@ -1,0 +1,58 @@
+[
+  {
+    "firstName": "Developer",
+    "lastName": "Admin",
+    "middleName": "",
+    "idNumber": "admin",
+    "password": "admin1234",
+    "type": "administrator"
+  },
+  {
+    "firstName": "Jaime",
+    "lastName": "Ballesteros",
+    "middleName": "",
+    "idNumber": "01-0001-23",
+    "password": "teacher1234",
+    "type": "teacher"
+  },
+  {
+    "firstName": "Calgary",
+    "lastName": "Molina",
+    "middleName": "",
+    "idNumber": "01-0002-23",
+    "password": "teacher1234",
+    "type": "teacher"
+  },
+  {
+    "firstName": "Arvin",
+    "lastName": "Arcilla",
+    "middleName": "",
+    "idNumber": "01-0003-23",
+    "password": "teacher1234",
+    "type": "teacher"
+  },
+  {
+    "firstName": "Aaron",
+    "lastName": "Benitez",
+    "middleName": "",
+    "idNumber": "01-0004-23",
+    "password": "teacher1234",
+    "type": "teacher"
+  },
+  {
+    "firstName": "Cedric",
+    "lastName": "Fernando",
+    "middleName": "",
+    "idNumber": "01-0005-23",
+    "password": "teacher1234",
+    "type": "teacher"
+  },
+  {
+    "firstName": "Shawn",
+    "lastName": "Domingo",
+    "middleName": "",
+    "idNumber": "01-0006-23",
+    "password": "teacher1234",
+    "type": "teacher"
+  }
+]

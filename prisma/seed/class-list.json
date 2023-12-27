@@ -1,0 +1,50 @@
+[
+  {
+    "gradeLevel": "PRE-KINDER",
+    "section": "DISNEY"
+  },
+  {
+    "gradeLevel": "KINDER",
+    "section": "DISNEY"
+  },
+  {
+    "gradeLevel": "GRADE 1",
+    "section": "PICASSO"
+  },
+  {
+    "gradeLevel": "GRADE 2",
+    "section": "VAN GOGH"
+  },
+  {
+    "gradeLevel": "GRADE 3",
+    "section": "JACKSON"
+  },
+  {
+    "gradeLevel": "GRADE 4",
+    "section": "NIJINSKY"
+  },
+  {
+    "gradeLevel": "GRADE 5",
+    "section": "MOZART"
+  },
+  {
+    "gradeLevel": "GRADE 6",
+    "section": "SHAKESPEARE"
+  },
+  {
+    "gradeLevel": "GRADE 7",
+    "section": "GATES"
+  },
+  {
+    "gradeLevel": "GRADE 8",
+    "section": "WINFREY"
+  },
+  {
+    "gradeLevel": "GRADE 9",
+    "section": "WALTON"
+  },
+  {
+    "gradeLevel": "GRADE 10",
+    "section": "KOTLER"
+  }
+]

@@ -1,0 +1,135 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "interactiveTransactions"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+  id            Int             @id @default(autoincrement())
+  firstName     String
+  lastName      String
+  middleName    String
+  idNumber      String          @unique @map(name: "id_number")
+  password      String
+  type          String // Administrator | Teacher | Student
+  createdAt     DateTime        @default(now()) @map(name: "created_at")
+  messages      Chat[]
+  student       Student?
+  classes       Class[]
+  classSchedule ClassSchedule[]
+
+  @@map(name: "user")
+}
+
+model Student {
+  id           Int             @id @default(autoincrement())
+  userId       Int             @unique @map(name: "user_id")
+  address      String?
+  guardian     String?
+  gender       String?
+  birthday     DateTime?
+  dateEnrolled DateTime?       @map(name: "date_enrolled")
+  status       String?
+  user         User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  classes      Class[]
+  grades       StudentGrades[]
+
+  @@map(name: "user_student")
+}
+
+model StudentGrades {
+  id         Int      @id @default(autoincrement())
+  studentId  Int      @map(name: "student_id")
+  classId    Int      @map(name: "class_id")
+  subjectId  Int      @map(name: "subject_id")
+  q1         String?
+  q2         String?
+  q3         String?
+  q4         String?
+  finalGrade String?
+  remarks    String?
+  student    Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subject    Subjects @relation(fields: [subjectId], references: [id])
+
+  @@map(name: "student_grades")
+}
+
+model SchoolYear {
+  id        Int     @id @default(autoincrement())
+  year      String
+  isActive  Boolean @default(false)
+  classList Class[]
+
+  @@map(name: "school_year")
+}
+
+model Class {
+  id           Int             @id @default(autoincrement())
+  adviserId    Int?            @map(name: "adviser_id")
+  schoolYearId Int             @map(name: "school_year_id")
+  gradeLevel   String          @map(name: "grade_level")
+  section      String
+  students     Student[]
+  schedules    ClassSchedule[]
+  adviser      User?           @relation(fields: [adviserId], references: [id])
+  schoolYear   SchoolYear      @relation(fields: [schoolYearId], references: [id])
+
+  @@map(name: "classes")
+}
+
+model Subjects {
+  id        Int             @id @default(autoincrement())
+  name      String          @unique
+  schedules ClassSchedule[]
+  grades    StudentGrades[]
+
+  @@map(name: "subjects")
+}
+
+model ClassSchedule {
+  id        Int       @id @default(autoincrement())
+  classId   Int       @map(name: "class_id")
+  subjectId Int?
+  teacherId Int?      @map(name: "teacher_id")
+  time      String
+  day       String
+  class     Class     @relation(fields: [classId], references: [id])
+  subject   Subjects? @relation(fields: [subjectId], references: [id])
+  teacher   User?     @relation(fields: [teacherId], references: [id])
+
+  @@map(name: "class_schedule")
+}
+
+model Chat {
+  id         Int            @id @default(autoincrement())
+  userId     Int            @unique @map(name: "user_id")
+  lastReadId Int            @default(0) @map(name: "last_read_id")
+  updatedAt  DateTime       @default(now()) @map(name: "updated_at")
+  user       User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages   ChatMessages[]
+
+  @@map(name: "chat")
+}
+
+model ChatMessages {
+  id             Int      @id @default(autoincrement())
+  chatId         Int      @map(name: "chat_id")
+  type           String // Admin | User
+  messageType    String   @default("text") @map(name: "message_type")
+  message        String?
+  attachment     Bytes?
+  attachmentName String?  @map(name: "attachment_name")
+  attachmentType String?  @map(name: "attachment_type")
+  createdAt      DateTime @default(now()) @map(name: "created_at")
+  chat           Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
+
+  @@map(name: "chat_messages")
+}
